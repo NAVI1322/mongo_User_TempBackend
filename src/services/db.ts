@@ -1,9 +1,10 @@
 // Import required modules
 import mongoose from 'mongoose';
 
-
+const dbUrl:string = process.env.DATABASE_URL ?? "" ;
+console.log(dbUrl)
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://Navneet:UmX45eXznXYiOSWK@mongodb.rrrlk32.mongodb.net/').then(() => {
+mongoose.connect(dbUrl).then(() => {
     console.log('Connected to MongoDB');
 }).catch((error:any) => {
     console.error('Error connecting to MongoDB:', error);
